@@ -13,12 +13,6 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  SaveAndClose(){
-    this.result = confirm('Bu Sayfadan çıkmak istediğinize emin misiniz');
 
-    if(this.result){
-      window.close()
-    }
-  }
 
 }

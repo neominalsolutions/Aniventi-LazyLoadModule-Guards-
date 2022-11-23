@@ -18,13 +18,8 @@ export class ModuleGuard implements CanLoad {
 
       // her istek de buraya düşüp true yada false olma durumuna göre module yüklenmesi sağlanacak.
 
-      console.log('route', route);
-      console.log('segments', segments);
-
      let permissions = localStorage.getItem('permissions');
      let result =  false;
-
-     console.log('hasPermission', permissions?.includes(route.path as string))
 
      if(permissions != undefined)
         result = permissions.includes(route.path as string);

@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './invoices.component.html',
   styleUrls: ['./invoices.component.scss']
 })
 export class InvoicesComponent implements OnInit {
-
-
-  result:boolean = false;
   
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
 
   SaveAndClose(){
-    this.result = confirm('Bu Sayfadan çıkmak istediğinize emin misiniz')
+    this.router.navigateByUrl('/');
   }
 
 }

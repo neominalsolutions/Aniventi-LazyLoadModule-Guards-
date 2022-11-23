@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DetailPageQuitGuard } from '../detail-page-quit.guard';
+import { PageQuitGuard } from '../page-quit.guard';
 import { PageGuard } from '../page.guard';
 import { DetailComponent } from './detail/detail.component';
 import { InvoicesComponent } from './invoices/invoices.component';
@@ -13,11 +13,12 @@ const routes: Routes = [
   { path: '', component: OrdersComponent },
   {
     path:'invoice',
-    component:InvoicesComponent
+    component:InvoicesComponent,
+    canDeactivate:[PageQuitGuard]
   },
   { 
     path:'detail/:id', component:DetailComponent,
-    canDeactivate:[DetailPageQuitGuard]
+    canActivate:[PageGuard]
   },
   
 

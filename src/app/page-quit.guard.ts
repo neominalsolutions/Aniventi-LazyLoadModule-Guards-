@@ -7,22 +7,16 @@ import { InvoicesComponent } from './orders/invoices/invoices.component';
 @Injectable({
   providedIn: 'root'
 })
-export class DetailPageQuitGuard implements CanDeactivate<DetailComponent> {
+export class PageQuitGuard implements CanDeactivate<unknown> {
   canDeactivate(
-    component: DetailComponent,
+    component: unknown,
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
       // componentten çıkıp çıkmayacağımızı ayrılıp ayrılamayacağımızın kararını vermek için bu servis üzerinden kontrol yapacaktır.
 
-      console.log('component.result', component.result)
-
-
-      if(component.result)
-        return true;
-      else
-        return false;
+    return  confirm('Sayfadan ayrılmak istediğinize emin misiniz');
   }
   
 }
