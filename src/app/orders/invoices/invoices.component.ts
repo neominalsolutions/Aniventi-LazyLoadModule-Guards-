@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class InvoicesComponent implements OnInit {
   
+ public formValid = false;
 
   constructor(private router:Router) { }
 
