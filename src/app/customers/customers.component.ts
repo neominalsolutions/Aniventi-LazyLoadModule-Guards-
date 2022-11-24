@@ -1,7 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { TokenInterceptor } from '../token.interceptor';
+
+// Customer componentinde sadece devreye girmesi için yaptık
+// providers kısmına birden fazla interceptor tanımlayabiliyoruz
 
 @Component({
   selector: 'app-customers',
